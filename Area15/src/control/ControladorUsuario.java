@@ -8,6 +8,18 @@ import model.Usuario;
 
 public class ControladorUsuario {
     private ArrayList<Usuario> listaUsuario = new ArrayList();
+    private static ControladorUsuario controladorUsuario;
+    
+    private ControladorUsuario(){};
+    
+    public static ControladorUsuario getInstance(){
+        
+        if( controladorUsuario == null ){
+            controladorUsuario = new ControladorUsuario();
+        }
+        
+        return controladorUsuario;
+    }
     
     public void cadastrarUsuario( String login, String senha, String nome, String cpf,
             TipoUsuario tipoUsuario ){
@@ -69,6 +81,7 @@ public class ControladorUsuario {
     public String toString() {
         return "ControladorUsuario{" + "listaUsuario=" + listaUsuario + '}';
     }
+    
     
     
 }

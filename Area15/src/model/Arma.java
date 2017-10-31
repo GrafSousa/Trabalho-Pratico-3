@@ -4,13 +4,24 @@ package model;
 public class Arma {
     private String nomeArma;
     private int capacidade;
+    private TipoTiro tipoTiro;
     private int idArma;
 
-    public Arma(String nomeArma, int capacidade, int idArma) {
+    public Arma(String nomeArma, int capacidade, TipoTiro tipoTiro) {
         this.nomeArma = nomeArma;
         this.capacidade = capacidade;
-        this.idArma = idArma;
+        this.tipoTiro = tipoTiro;
     }
+
+    public TipoTiro getTipoTiro() {
+        return tipoTiro;
+    }
+
+    public void setTipoTiro(TipoTiro tipoTiro) {
+        this.tipoTiro = tipoTiro;
+    }
+    
+    
 
     public String getNomeArma() {
         return nomeArma;
@@ -38,8 +49,9 @@ public class Arma {
 
     @Override
     public String toString() {
-        return "Arma{" + "nomeArma=" + nomeArma + ", capacidade=" + capacidade + ", idArma=" + idArma + '}';
+        return "Arma{" + "nomeArma=" + nomeArma + ", capacidade=" + capacidade + ", tipoTiro=" + tipoTiro + ", idArma=" + idArma + '}';
     }
+
     
     
     

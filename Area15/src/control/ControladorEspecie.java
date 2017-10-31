@@ -9,6 +9,17 @@ import model.TipoUsuario;
 
 public class ControladorEspecie {
     private ArrayList<Especie> listaEspecie = new ArrayList();
+    private static ControladorEspecie controladorEspecie;
+    
+    private ControladorEspecie(){};
+    
+    public static ControladorEspecie getInstance(){
+        
+        if( controladorEspecie == null )
+            controladorEspecie = new ControladorEspecie();
+        
+        return controladorEspecie;
+    }
     
     
    public void cadastrarEspecie( TipoUsuario tipoUsuario, int totalPatas, int totaOlhos,
@@ -68,4 +79,11 @@ public class ControladorEspecie {
        }
        return false;
    }
+
+    @Override
+    public String toString() {
+        return "ControladorEspecie{" + "listaEspecie=" + listaEspecie + '}';
+    }
+   
+   
 }
