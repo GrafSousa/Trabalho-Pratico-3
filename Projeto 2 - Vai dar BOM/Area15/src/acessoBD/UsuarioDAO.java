@@ -24,10 +24,10 @@ public class UsuarioDAO {
             stmt.setInt(5, usuario.getTipoUsuario().getPatente());
             
             stmt.execute();
-            stmt.close();
-            connection.close();
+            //stmt.close();
+            //connection.close();
         } catch (SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
     }
 }

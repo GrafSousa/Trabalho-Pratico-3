@@ -11,7 +11,7 @@ public class ConnectionFactory {
         try{
             //Colocar no segundo parâmetro o usuário do BD, normalmente é root
             //Colocar no terceiro parâmetro a senha do banco
-            return DriverManager.getConnection("jdbc:mysql://localhost/Area15","" , "");
+            return DriverManager.getConnection("jdbc:mysql://localhost/Area15","root" , "senha");
         } catch( SQLException e){
             throw new RuntimeException();
         }

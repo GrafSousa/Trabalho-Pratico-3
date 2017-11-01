@@ -20,5 +20,10 @@ public class ControladorUsuario {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "ControladorUsuario{" + "usuario=" + usuario + '}';
+    }
     
 }
