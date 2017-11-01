@@ -1,13 +1,14 @@
 
 package control;
 
+import conexaoBD.UsuarioDAO;
 import java.util.ArrayList;
 import model.TipoUsuario;
 import model.Usuario;
 
 
 public class ControladorUsuario {
-    private ArrayList<Usuario> listaUsuario = new ArrayList();
+    UsuarioDAO usuarioDao;
     private static ControladorUsuario controladorUsuario;
     
     private ControladorUsuario(){};
@@ -24,13 +25,15 @@ public class ControladorUsuario {
     public void cadastrarUsuario( String login, String senha, String nome, String cpf,
             TipoUsuario tipoUsuario ){
         
-        if( pesquisarUsuario(cpf) == false ){
+      //  if( pesquisarUsuario(cpf) == false ){
             
-            Usuario usuario = new Usuario(login, senha, nome, cpf, tipoUsuario);
-            listaUsuario.add(usuario);
-        }
+           // Usuario usuario = new Usuario(login, senha, nome, cpf, tipoUsuario);
+            
+            //usuarioDao.cadastrarUsuario(usuario);
+        //}
     }
-    
+   
+    /*
     public void excluirUsuario( String cpf ){
         
         Usuario usuario = recuperarUsuario(cpf);
@@ -81,7 +84,7 @@ public class ControladorUsuario {
     public String toString() {
         return "ControladorUsuario{" + "listaUsuario=" + listaUsuario + '}';
     }
-    
+    */
     
     
 }

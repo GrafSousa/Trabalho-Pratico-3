@@ -1,19 +1,35 @@
 
 package area15;
 
+import conexaoBD.ConnectionFactory;
+import conexaoBD.UsuarioDAO;
 import control.ControladorAlienigena;
 import control.ControladorEspecie;
 import control.ControladorNaveEspacial;
 import control.ControladorUsuario;
+import java.sql.Connection;
+import java.sql.SQLException;
 import model.MeioComunicacao;
 import model.NaveEspacial;
 import model.TipoEspecie;
 import model.TipoTiro;
 import model.TipoUsuario;
+import model.Usuario;
 
 public class Principal {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        
+        //ControladorUsuario.getInstance().cadastrarUsuario("grafsousa", "123", "Gustavo", "11111111", TipoUsuario.SOLDADO);
+        Usuario usuario = new Usuario("grafsousa", "123", "Gustavo", "11111111", TipoUsuario.SOLDADO);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.cadastrarUsuario(usuario);
+    }
+    
+}
+
+        
+        /*
         ControladorUsuario.getInstance().cadastrarUsuario("graf", "123", "Gustavo", "116", TipoUsuario.PRESIDENTE);
         ControladorUsuario.getInstance().cadastrarUsuario("graf", "123", "Gustavo", "117", TipoUsuario.MARECHAL_DA_FEDERACAO_RUSSA);
         ControladorUsuario.getInstance().cadastrarUsuario("graf", "123", "Gustavo", "118", TipoUsuario.CORONEL);
@@ -55,9 +71,4 @@ public class Principal {
         
    
         System.out.println(" " + ControladorAlienigena.getInstance().toString());
-        
-        
-        
-    }
-    
-}
+        */
